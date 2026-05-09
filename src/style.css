@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --red-accent: #b71c1c;
+    --red-glow: #d32f2f;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: #080808;
+}
+
+body {
+    background: #080808;
+    font-family: 'Noto Sans JP', 'Inter', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* 任侠の印章 - 巨大な「店」 */
+.seal-stamp {
+    font-family: 'Noto Serif JP', 'Times New Roman', serif;
+    position: absolute;
+    font-size: clamp(180px, 28vw, 380px);
+    font-weight: 900;
+    color: rgba(183, 28, 28, 0.015);
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.05em;
+    z-index: 0;
+    animation: sealBreathe 8s ease-in-out infinite;
+}
+
+@keyframes sealBreathe {
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.03);
+    }
+}
+
+/* 赤いグロー */
+.red-glow {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(183, 28, 28, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    animation: glowPulse 5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+}
+
+/* カードの赤い下線アニメーション */
+.card-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1.5px;
+    background: #b71c1c;
+    transition: width 0.5s cubic-bezier(0.22, 0.1, 0.1, 1);
+}
+
+.card-underline:hover::after {
+    width: 100%;
+}
+
+/* オンラインランプ点滅 */
+.lamp-blink {
+    animation: lampBlink 2.5s ease-in-out infinite;
+}
+
+@keyframes lampBlink {
+    0%,
+    100% {
+        opacity: 1;
+        box-shadow: 0 0 8px #2ecc40, 0 0 24px rgba(46, 204, 64, 0.5);
+    }
+    18% {
+        opacity: 0.4;
+        box-shadow: 0 0 3px #2ecc40, 0 0 8px rgba(46, 204, 64, 0.2);
+    }
+    28% {
+        opacity: 1;
+        box-shadow: 0 0 8px #2ecc40, 0 0 24px rgba(46, 204, 64, 0.5);
+    }
+}
+
+/* 脈動する赤いライン */
+.pulse-line {
+    animation: linePulse 3s ease-in-out infinite;
+}
+
+@keyframes linePulse {
+    0%,
+    100% {
+        opacity: 0.3;
+        width: 60px;
+    }
+    50% {
+        opacity: 0.8;
+        width: 120px;
+    }
+}
+
+/* 粒子浮遊 */
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #b71c1c;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: particleFloat 5s infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(1);
+    }
+    15% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 0.3;
+        transform: translateY(-40px) scale(1.6);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-70px) scale(0.4);
+    }
+}
+
+/* カードフェードイン */
+@media (prefers-reduced-motion: no-preference) {
+    .fade-in-card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.7s ease forwards;
+    }
+    .fade-in-card:nth-child(1) {
+        animation-delay: 0.05s;
+    }
+    .fade-in-card:nth-child(2) {
+        animation-delay: 0.12s;
+    }
+    .fade-in-card:nth-child(3) {
+        animation-delay: 0.19s;
+    }
+    .fade-in-card:nth-child(4) {
+        animation-delay: 0.26s;
+    }
+    .fade-in-card:nth-child(5) {
+        animation-delay: 0.33s;
+    }
+    .fade-in-card:nth-child(6) {
+        animation-delay: 0.40s;
+    }
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+/* スクロールバー */
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-track {
+    background: #080808;
+}
+::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #333;
+}
+
+/* 選択色 */
+::selection {
+    background: rgba(183, 28, 28, 0.35);
+    color: #fff;
+}

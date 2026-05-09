@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>TENCHO AI ECONOMY | 任侠の台帳</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&family=Noto+Serif+JP:wght@400;500;600;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-tencho-black text-tencho-text antialiased">
+    <div id="app">
+        <!-- ===== ナビゲーション ===== -->
+        <header class="sticky top-0 z-50 bg-[#080808]/85 backdrop-blur-xl border-b border-white/[0.04]">
+            <div class="max-w-6xl mx-auto px-5 md:px-8 flex items-center justify-between h-16">
+                <a href="#" class="flex items-center gap-2 no-underline">
+                    <span class="font-display text-lg md:text-xl font-bold tracking-widest text-[#e0e0e0]">
+                        <span class="text-tencho-red text-xl md:text-2xl">店</span>TENCHO
+                    </span>
+                </a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#thoughts" class="text-xs tracking-widest text-tencho-text-secondary hover:text-tencho-red transition-colors duration-300 no-underline uppercase">思想</a>
+                    <a href="#system" class="text-xs tracking-widest text-tencho-text-secondary hover:text-tencho-red transition-colors duration-300 no-underline uppercase">システム</a>
+                    <a href="#economy" class="text-xs tracking-widest text-tencho-text-secondary hover:text-tencho-red transition-colors duration-300 no-underline uppercase">経済圏</a>
+                    <a href="#" class="border border-tencho-red text-tencho-red px-5 py-2 text-xs tracking-widest no-underline hover:bg-tencho-red hover:text-white transition-all duration-300 uppercase">参入</a>
+                </nav>
+                <a href="#" class="md:hidden border border-tencho-red text-tencho-red px-4 py-1.5 text-xs tracking-widest no-underline hover:bg-tencho-red hover:text-white transition-all duration-300 uppercase">参入</a>
+            </div>
+        </header>
+
+        <main>
+            <!-- ===== HERO ===== -->
+            <section class="relative overflow-hidden min-h-[85vh] flex items-center justify-center px-5 md:px-8 py-24 md:py-32">
+                <div class="seal-stamp" style="top:50%;left:50%;transform:translate(-50%,-50%);" aria-hidden="true">店</div>
+                <div class="red-glow w-[600px] h-[600px]" style="top:40%;left:50%;transform:translate(-50%,-50%);" aria-hidden="true"></div>
+
+                <!-- 粒子 -->
+                <div class="particle" style="top:15%;left:20%;animation-delay:0s;"></div>
+                <div class="particle" style="top:25%;right:18%;animation-delay:0.8s;"></div>
+                <div class="particle" style="bottom:30%;left:15%;animation-delay:1.6s;"></div>
+                <div class="particle" style="bottom:20%;right:22%;animation-delay:2.4s;"></div>
+                <div class="particle" style="top:40%;left:8%;animation-delay:3.2s;"></div>
+                <div class="particle" style="top:18%;right:35%;animation-delay:4.0s;"></div>
+
+                <div class="relative z-10 text-center max-w-2xl mx-auto">
+                    <span class="block text-tencho-red text-xs md:text-sm tracking-widest-xl mb-6 uppercase font-mono">AI Economy · 任侠経済圏</span>
+                    <h1 class="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-wider leading-tight text-[#f0f0f0] mb-6">
+                        AIを<span class="text-tencho-red">使う</span>な。<br class="md:hidden">AIを<span class="text-tencho-red">使わせ</span>ろ。
+                    </h1>
+                    <p class="text-sm md:text-base text-[#6b6b6b] tracking-wider leading-relaxed mb-10 max-w-lg mx-auto">
+                        TENCHO AI ECONOMYは、AIに使われる側ではなく、<br class="hidden md:block">AIを働かせる経営者のための思想メディア。
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                        <a href="#thoughts" class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-tencho-red text-white px-10 py-4 text-sm font-semibold tracking-widest no-underline hover:bg-tencho-red-bright transition-all duration-300 shadow-lg shadow-tencho-red/20 hover:shadow-tencho-red/40 hover:-translate-y-0.5 uppercase">
+                            思想を読む
+                            <span class="text-lg">→</span>
+                        </a>
+                        <a href="#system" class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-transparent text-tencho-text-secondary border border-white/10 px-10 py-4 text-sm font-semibold tracking-widest no-underline hover:border-tencho-red/50 hover:text-white transition-all duration-300 uppercase">
+                            システムを見る
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== AI ORGANIZATION 組織図 ===== -->
+            <section class="relative px-5 md:px-8 py-20 md:py-28 max-w-5xl mx-auto">
+                <div class="text-center mb-16 md:mb-20">
+                    <span class="block text-tencho-red text-xs tracking-widest-xl uppercase mb-4 font-mono">Organization</span>
+                    <h2 class="font-display text-3xl md:text-5xl font-bold tracking-wider text-tencho-text leading-tight">
+                        AI<span class="text-tencho-red">連合軍</span>編成
+                    </h2>
+                    <div class="w-10 h-0.5 bg-tencho-red/60 mx-auto mt-6 pulse-line"></div>
+                    <p class="text-sm text-tencho-text-muted tracking-wider mt-4 max-w-md mx-auto">任侠の組織図。各AIは店を守る一家の幹部である。</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
+                    <div class="bg-tencho-card border border-white/[0.04] p-6 md:p-7 text-center transition-all duration-500 hover:border-tencho-red/40 hover:bg-tencho-card-hover hover:shadow-2xl hover:shadow-black/60 hover:-translate-y-1 card-underline relative overflow-hidden">
+                        <span class="block text-tencho-red text-xs tracking-widest-xl mb-3 uppercase font-mono">感情設計主任</span>
+                        <p class="font-display text-lg font-bold text-[#ddd] mb-2">Claude</p>
+                        <p class="text-xs text-tencho-text-muted tracking-wider">文章、余白、温度、世界観</p>
+                    </div>
+                    <div class="bg-tencho-card border border-white/[0.04] p-6 md:p-7 text-center transition-all duration-500 hover:border-tencho-red/40 hover:bg-tencho-card-hover hover:shadow-2xl hover:shadow-black/60 hover:-translate-y-1 card-underline relative overflow-hidden">
+                        <span class="block text-tencho-red text-xs tracking-widest-xl mb-3 uppercase font-mono">戦略参謀</span>
+                        <p class="font-display text-lg font-bold text-[#ddd] mb-2">ChatGPT</p>
+                        <p class="text-xs text-tencho-text-muted tracking-wider">構造化、比較、判断、整理</p>
+                    </div>
+                    <div class="bg-tencho-card border border-white/[0.04] p-6 md:p-7 text-center transition-all duration-500 hover:border-tencho-red/40 hover:bg-tencho-card-hover hover:shadow-2xl hover:shadow-black/60 hover:-translate-y-1 card-underline relative overflow-hidden">
+                        <span class="block text-tencho-red text-xs tracking-widest-xl mb-3 uppercase font-mono">突破工兵</span>
+                        <p class="font-display text-lg font-bold text-[#ddd] mb-2">DeepSeek</p>
+                        <p class="text-xs text-tencho-text-muted tracking-wider">コード、実装、修正、検証</p>
+                    </div>
+                    <div class="bg-tencho-card border border-white/[0.04] p-6 md:p-7 text-center transition-all duration-500 hover:border-tencho-red/40 hover:bg-tencho-card-hover hover:shadow-2xl hover:shadow-black/60 hover:-translate-y-1 card-underline relative overflow-hidden">
+                        <span class="block text-tencho-red text-xs tracking-widest-xl mb-3 uppercase font-mono">自有工場</span>
+                        <p class="font-display text-lg font-bold text-[#ddd] mb-2">Local AI</p>
+                        <p class="text-xs text-tencho-text-muted tracking-wider">Ollama / 所有するAI</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== THINKING LOG 思想ログ ===== -->
+            <section id="thoughts" class="relative px-5 md:px-8 py-20 md:py-28 max-w-4xl mx-auto border-t border-white/[0.03]">
+                <div class="mb-16 md:mb-20">
+                    <span class="block text-tencho-red text-xs tracking-widest-xl uppercase mb-4 font-mono pl-6 relative before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-[1.5px] before:bg-tencho-red/60">Thinking Log</span>
+                    <h2 class="font-display text-3xl md:text-5xl font-bold tracking-wider text-[#f0f0f0] leading-tight">
+                        思想ログ<span class="text-tencho-red">／</span>任侠の台帳
+                    </h2>
+                    <p class="text-sm text-tencho-text-muted tracking-wider mt-4">AIを飼い慣らすのではなく、AIを働かせる。使われる側から、采配を振るう側へ。</p>
+                </div>
+
+                <div class="flex flex-col gap-4 md:gap-5">
+                    <a href="#" class="fade-in-card block bg-tencho-card border border-white/[0.04] p-6 md:p-8 no-underline text-inherit transition-all duration-500 hover:border-tencho-red/40 hover:bg-tencho-card-hover hover:shadow-2xl hover:shadow-black/60 hover:translate-x-1 card-underline relative overflow-hidden group">
+                        <div class="flex items-start gap-5 md:gap-8">
+                            <span class="flex-shrink-0 font-mono text-5xl md:text-6xl font-black text-white/[0.03] leading-none transition-colors duration-500 group-hover:text-tencho-red/10 select-none">01</span>
+                            <div>
+                                <h3 class="font-display text-lg md:text-xl font-bold text-[#e0e0e0] tracking-wider mb-2 group-hover:text-white transition-colors duration-300">AIに使われるな、AIをこき使う側へ</h3>
+                                <p class="text-sm text-tencho-text-secondary tracking-wider leading-relaxed group-hover:text-[#c0c0c0] transition-colors duration-300">AI時代に必要なのは、答えを聞く力ではなく、仕事を割り振る力である。</p>
+                                <span class="inline-block text-tencho-red text-xs tracking-widest mt-3 opacity-0 translate-y-1 group-hover:opacity-70 group-hover:translate-y-0 transition-all duration-400 font-mono">— 采配の思想</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="fade-in-card block bg-tencho-card border border-white/[0.04] p-6 md:p-8 no-underline text-inherit transition-all duration-500 hover:border-tencho-red/40 hover:bg-tencho-card-hover hover:shadow-2xl hover:shadow-black/60 hover:translate-x-1 card-underline relative overflow-hidden group">
+                        <div class="flex items-start gap-5 md:gap-8">
+                            <span class="flex-shrink-0 font-mono text-5xl md:text-6xl font-black text-white/[0.03] leading-none transition-colors duration-500 group-hover:text-tencho-red/10 select-none">02</span>
+                            <div>
+                                <h3 class="font-display text-lg md:text-xl font-bold text-[#e0e0e0] tracking-wider mb-2 group-hover:text-white transition-colors duration-300">Claudeは感情設計主任である</h3>
+                                <p class="text-sm text-tencho-text-secondary tracking-wider leading-relaxed group-hover:text-[#c0c0c0] transition-colors duration-300">文章、余白、温度、世界観。人間の感情導線を設計するAI。</p>
+                                <span class="inline-block text-tencho-red text-xs tracking-widest mt-3 opacity-0 translate-y-1 group-hover:opacity-70 group-hover:translate-y-0 transition-all duration-400 font-mono">— 情感の設計</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="fade-in-card block bg-tencho-card border border-white/[0.04] p-6 md:p-8 no-underline text-inherit transition-all duration-500 hover:border-tencho-red/40 hover:bg-tencho-card-hover hover:shadow-2xl hover:shadow-black/60 hover:translate-x-1 card-underline relative overflow-hidden group">
+                        <div class="flex items-start gap-5 md:gap-8">
+                            <span class="flex-shrink-0 font-mono text-5xl md:text-6xl font-black text-white/[0.03] leading-none transition-colors duration-500 group-hover:text-tencho-red/10 select-none">03</span>
+                            <div>
+                                <h3 class="font-display text-lg md:text-xl font-bold text-[#e0e0e0] tracking-wider mb-2 group-hover:text-white transition-colors duration-300">ChatGPTは戦略参謀である</h3>
+                                <p class="text-sm text-tencho-text-secondary tracking-wider leading-relaxed group-hover:text-[#c0c0c0] transition-colors duration-300">構造化、比較、判断、整理。混沌を戦略に変換するAI。</p>
+                                <span class="inline-block text-tencho-red text-xs tracking-widest mt-3 opacity-0 translate-y-1 group-hover:opacity-70 group-hover:translate-y-0 transition-all duration-400 font-mono">— 戦略の頭脳</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="fade-in-card block bg-tencho-card border border-white/[0.04] p-6 md:p-8 no-underline text-inherit transition-all duration-500 hover:border-tencho-red/40 hover:bg-tencho-card-hover hover:shadow-2xl hover:shadow-black/60 hover:translate-x-1 card-underline relative overflow-hidden group">
+                        <div class="flex items-start gap-5 md:gap-8">
+                            <span class="flex-shrink-0 font-mono text-5xl md:text-6xl font-black text-white/[0.03] leading-none transition-colors duration-500 group-hover:text-tencho-red/10 select-none">04</span>
+                            <div>
+                                <h3 class="font-display text-lg md:text-xl font-bold text-[#e0e0e0] tracking-wider mb-2 group-hover:text-white transition-colors duration-300">DeepSeekは突破工兵である</h3>
+                                <p class="text-sm text-tencho-text-secondary tracking-wider leading-relaxed group-hover:text-[#c0c0c0] transition-colors duration-300">コード、実装、修正、検証。壁を壊して前に進めるAI。</p>
+                                <span class="inline-block text-tencho-red text-xs tracking-widest mt-3 opacity-0 translate-y-1 group-hover:opacity-70 group-hover:translate-y-0 transition-all duration-400 font-mono">— 実装の剛腕</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="fade-in-card block bg-tencho-card border border-white/[0.04] p-6 md:p-8 no-underline text-inherit transition-all duration-500 hover:border-tencho-red/40 hover:bg-tencho-card-hover hover:shadow-2xl hover:shadow-black/60 hover:translate-x-1 card-underline relative overflow-hidden group">
+                        <div class="flex items-start gap-5 md:gap-8">
+                            <span class="flex-shrink-0 font-mono text-5xl md:text-6xl font-black text-white/[0.03] leading-none transition-colors duration-500 group-hover:text-tencho-red/10 select-none">05</span>
+                            <div>
+                                <h3 class="font-display text-lg md:text-xl font-bold text-[#e0e0e0] tracking-wider mb-2 group-hover:text-white transition-colors duration-300">ローカルAIは自分の工場である</h3>
+                                <p class="text-sm text-tencho-text-secondary tracking-wider leading-relaxed group-hover:text-[#c0c0c0] transition-colors duration-300">Ollamaとローカルモデルは、AIを借りる側から所有する側へ移る入口。</p>
+                                <span class="inline-block text-tencho-red text-xs tracking-widest mt-3 opacity-0 translate-y-1 group-hover:opacity-70 group-hover:translate-y-0 transition-all duration-400 font-mono">— 所有の要塞</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="fade-in-card block bg-tencho-card border border-white/[0.04] p-6 md:p-8 no-underline text-inherit transition-all duration-500 hover:border-tencho-red/40 hover:bg-tencho-card-hover hover:shadow-2xl hover:shadow-black/60 hover:translate-x-1 card-underline relative overflow-hidden group">
+                        <div class="flex items-start gap-5 md:gap-8">
+                            <span class="flex-shrink-0 font-mono text-5xl md:text-6xl font-black text-white/[0.03] leading-none transition-colors duration-500 group-hover:text-tencho-red/10 select-none">06</span>
+                            <div>
+                                <h3 class="font-display text-lg md:text-xl font-bold text-[#e0e0e0] tracking-wider mb-2 group-hover:text-white transition-colors duration-300">経営者はコードを書くより構造を組め</h3>
+                                <p class="text-sm text-tencho-text-secondary tracking-wider leading-relaxed group-hover:text-[#c0c0c0] transition-colors duration-300">AI時代の経営者に必要なのは、細かい作業よりも工程設計と判断である。</p>
+                                <span class="inline-block text-tencho-red text-xs tracking-widest mt-3 opacity-0 translate-y-1 group-hover:opacity-70 group-hover:translate-y-0 transition-all duration-400 font-mono">— 経営の要諦</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- ===== REAL SYSTEM STATUS ===== -->
+            <section id="system" class="relative px-5 md:px-8 py-20 md:py-28 max-w-4xl mx-auto border-t border-white/[0.03] overflow-hidden">
+                <div class="red-glow w-[500px] h-[500px]" style="top:50%;left:50%;transform:translate(-50%,-50%);" aria-hidden="true"></div>
+                <div class="relative z-10">
+                    <div class="text-center mb-16 md:mb-20">
+                        <span class="block text-tencho-red text-xs tracking-widest-xl uppercase mb-4 font-mono">System Monitor</span>
+                        <h2 class="font-display text-3xl md:text-5xl font-bold tracking-wider text-[#f0f0f0] leading-tight">
+                            実稼働状態<span class="text-tencho-red">／司令室</span>
+                        </h2>
+                        <div class="w-10 h-0.5 bg-tencho-red/60 mx-auto mt-6 pulse-line"></div>
+                    </div>
+
+                    <!-- オンラインバナー -->
+                    <div class="flex items-center justify-center gap-3 mb-12 font-mono text-sm md:text-base tracking-widest text-[#c0c0c0] uppercase">
+                        <span class="w-3 h-3 rounded-full bg-[#2ecc40] lamp-blink"></span>
+                        SYSTEM ONLINE
+                    </div>
+
+                    <!-- ステータスグリッド -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 mb-12">
+                        <div class="bg-tencho-card border border-white/[0.04] p-6 md:p-7 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover">
+                            <span class="block text-tencho-red text-xs tracking-widest-xl mb-3 uppercase font-mono">Latest Commit</span>
+                            <p class="font-mono text-sm text-[#d0d0d0] tracking-wider">upgrade thinking log section</p>
+                            <p class="font-mono text-xs text-tencho-text-muted mt-2">#a3f7b2c · main branch</p>
+                        </div>
+                        <div class="bg-tencho-card border border-white/[0.04] p-6 md:p-7 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover">
+                            <span class="block text-tencho-red text-xs tracking-widest-xl mb-3 uppercase font-mono">Last Deploy</span>
+                            <p class="font-mono text-sm text-[#d0d0d0] tracking-wider" id="deployCounter">2 minutes ago</p>
+                            <p class="font-mono text-xs text-tencho-text-muted mt-2">GitHub Pages · auto-deploy</p>
+                        </div>
+                        <div class="bg-tencho-card border border-white/[0.04] p-6 md:p-7 md:col-span-2 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover">
+                            <span class="block text-tencho-red text-xs tracking-widest-xl mb-4 uppercase font-mono">AI Nodes Online</span>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="inline-flex items-center gap-2 bg-tencho-red/5 border border-tencho-red/20 px-4 py-2 font-mono text-xs tracking-wider text-[#c0c0c0] transition-all duration-300 hover:bg-tencho-red/10 hover:border-tencho-red/40 hover:text-white"><span class="w-1.5 h-1.5 rounded-full bg-[#2ecc40] lamp-blink"></span>Claude</span>
+                                <span class="inline-flex items-center gap-2 bg-tencho-red/5 border border-tencho-red/20 px-4 py-2 font-mono text-xs tracking-wider text-[#c0c0c0] transition-all duration-300 hover:bg-tencho-red/10 hover:border-tencho-red/40 hover:text-white"><span class="w-1.5 h-1.5 rounded-full bg-[#2ecc40] lamp-blink"></span>ChatGPT</span>
+                                <span class="inline-flex items-center gap-2 bg-tencho-red/5 border border-tencho-red/20 px-4 py-2 font-mono text-xs tracking-wider text-[#c0c0c0] transition-all duration-300 hover:bg-tencho-red/10 hover:border-tencho-red/40 hover:text-white"><span class="w-1.5 h-1.5 rounded-full bg-[#2ecc40] lamp-blink"></span>DeepSeek</span>
+                                <span class="inline-flex items-center gap-2 bg-tencho-red/5 border border-tencho-red/20 px-4 py-2 font-mono text-xs tracking-wider text-[#c0c0c0] transition-all duration-300 hover:bg-tencho-red/10 hover:border-tencho-red/40 hover:text-white"><span class="w-1.5 h-1.5 rounded-full bg-[#2ecc40] lamp-blink"></span>Perplexity</span>
+                            </div>
+                        </div>
+                        <div class="bg-tencho-card border border-white/[0.04] p-6 md:p-7 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover">
+                            <span class="block text-tencho-red text-xs tracking-widest-xl mb-3 uppercase font-mono">Operation Queue</span>
+                            <ul class="space-y-2 font-mono text-xs text-tencho-text-muted tracking-wider">
+                                <li class="flex items-center gap-2 hover:text-[#c0c0c0] transition-colors duration-300"><span class="w-1.5 h-1.5 rounded-full bg-tencho-red animate-pulse"></span>LP optimization</li>
+                                <li class="flex items-center gap-2 hover:text-[#c0c0c0] transition-colors duration-300"><span class="w-1.5 h-1.5 rounded-full bg-tencho-red animate-pulse"></span>AI map redesign</li>
+                                <li class="flex items-center gap-2 hover:text-[#c0c0c0] transition-colors duration-300"><span class="w-1.5 h-1.5 rounded-full bg-tencho-red animate-pulse"></span>Discord integration</li>
+                            </ul>
+                        </div>
+                        <div class="bg-tencho-card border border-white/[0.04] p-6 md:p-7 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover">
+                            <span class="block text-tencho-red text-xs tracking-widest-xl mb-3 uppercase font-mono">GitHub Sync</span>
+                            <div class="flex items-center gap-2 font-mono text-sm text-[#2ecc40] tracking-wider">
+                                <span class="w-2 h-2 rounded-full bg-[#2ecc40] shadow-[0_0_8px_rgba(46,204,64,0.5)]"></span>
+                                CONNECTED
+                            </div>
+                            <p class="font-mono text-xs text-tencho-text-muted mt-2">origin/main ↔ live</p>
+                        </div>
+                    </div>
+
+                    <!-- TENCHO OS ONLINE -->
+                    <div class="text-center mt-16">
+                        <p class="font-display text-4xl md:text-6xl lg:text-7xl font-black tracking-widest text-[#e0e0e0] leading-tight animate-pulse" style="text-shadow:0 0 40px rgba(183,28,28,0.4),0 0 80px rgba(183,28,28,0.15);">
+                            <span class="text-tencho-red">TENCHO OS</span><br>ONLINE
+                        </p>
+                        <span class="block text-tencho-red/60 text-xs tracking-widest-xl mt-4 font-mono uppercase">◆ 任侠経済圏 稼働中 ◆</span>
+                        <div class="w-16 h-0.5 bg-tencho-red/50 mx-auto mt-6 pulse-line"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== AI ECONOMY FLOW 経済循環 ===== -->
+            <section id="economy" class="relative px-5 md:px-8 py-20 md:py-28 max-w-4xl mx-auto border-t border-white/[0.03]">
+                <div class="red-glow w-[600px] h-[600px]" style="top:50%;left:50%;transform:translate(-50%,-50%);" aria-hidden="true"></div>
+                <div class="relative z-10 text-center">
+                    <span class="block text-tencho-red text-xs tracking-widest-xl uppercase mb-4 font-mono">Economic Loop</span>
+                    <h2 class="font-display text-3xl md:text-5xl font-bold tracking-wider text-[#f0f0f0] leading-tight mb-6">
+                        AIによる<span class="text-tencho-red">経済循環</span>を可視化せよ
+                    </h2>
+                    <p class="text-sm text-tencho-text-muted tracking-wider max-w-md mx-auto mb-12">
+                        AI分析 → LP生成 → SNS運用 → 集客 → 予約 → 売上 → 改善 → 再設計
+                    </p>
+
+                    <!-- SVG 循環図 -->
+                    <div class="relative w-full max-w-md mx-auto aspect-square mb-12">
+                        <svg viewBox="0 0 400 400" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="200" cy="200" r="150" fill="none" stroke="#b71c1c" stroke-width="1" opacity="0.25" stroke-dasharray="10 6" />
+                            <circle cx="200" cy="200" r="150" fill="none" stroke="#d32f2f" stroke-width="1" opacity="0.15" stroke-dasharray="3 10">
+                                <animate attributeName="stroke-dashoffset" from="0" to="-13" dur="2s" repeatCount="indefinite" />
+                            </circle>
+                            <text x="200" y="195" text-anchor="middle" font-family="'Noto Serif JP',serif" font-size="18" font-weight="700" fill="#f0f0f0" letter-spacing="4">TENCHO</text>
+                            <text x="200" y="218" text-anchor="middle" font-family="'Noto Serif JP',serif" font-size="14" font-weight="700" fill="#b71c1c" letter-spacing="6">ECONOMY LOOP</text>
+                            <!-- ノード -->
+                            <circle cx="200" cy="50" r="16" fill="#0a0a0a" stroke="#b71c1c" stroke-width="1" opacity="0.7" />
+                            <text x="200" y="54" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#c0c0c0">分析</text>
+                            <circle cx="306" cy="93" r="16" fill="#0a0a0a" stroke="#b71c1c" stroke-width="1" opacity="0.7" />
+                            <text x="306" y="97" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#c0c0c0">LP</text>
+                            <circle cx="350" cy="200" r="16" fill="#0a0a0a" stroke="#b71c1c" stroke-width="1" opacity="0.7" />
+                            <text x="350" y="204" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#c0c0c0">SNS</text>
+                            <circle cx="306" cy="307" r="16" fill="#0a0a0a" stroke="#b71c1c" stroke-width="1" opacity="0.7" />
+                            <text x="306" y="311" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#c0c0c0">集客</text>
+                            <circle cx="200" cy="350" r="16" fill="#0a0a0a" stroke="#b71c1c" stroke-width="1" opacity="0.7" />
+                            <text x="200" y="354" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#c0c0c0">予約</text>
+                            <circle cx="94" cy="307" r="16" fill="#0a0a0a" stroke="#b71c1c" stroke-width="1" opacity="0.7" />
+                            <text x="94" y="311" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#c0c0c0">売上</text>
+                            <circle cx="50" cy="200" r="16" fill="#0a0a0a" stroke="#b71c1c" stroke-width="1" opacity="0.7" />
+                            <text x="50" y="204" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#c0c0c0">改善</text>
+                            <circle cx="94" cy="93" r="16" fill="#0a0a0a" stroke="#b71c1c" stroke-width="1" opacity="0.7" />
+                            <text x="94" y="97" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="7" fill="#c0c0c0">再設計</text>
+                        </svg>
+                    </div>
+
+                    <p class="font-display text-2xl md:text-4xl font-bold tracking-wider text-[#e0e0e0] leading-relaxed mb-8">
+                        AIを使うな。<br><span class="text-tencho-red">AIで経済圏を回せ。</span>
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 bg-tencho-red text-white px-10 py-4 text-sm font-semibold tracking-widest no-underline hover:bg-tencho-red-bright transition-all duration-300 shadow-lg shadow-tencho-red/20 hover:shadow-tencho-red/40 hover:-translate-y-0.5 uppercase">
+                        経済循環を始める →
+                    </a>
+                </div>
+            </section>
+
+            <!-- ===== NOTE記事セクション ===== -->
+            <section class="relative px-5 md:px-8 py-20 md:py-28 max-w-3xl mx-auto border-t border-white/[0.03]">
+                <div class="text-center mb-16 md:mb-20">
+                    <span class="block text-tencho-red text-xs tracking-widest-xl uppercase mb-4 font-mono">NOTE Article</span>
+                    <h2 class="font-display text-3xl md:text-5xl font-bold tracking-wider text-[#f0f0f0] leading-tight">
+                        AIに使われるな。<br><span class="text-tencho-red">AIをこき使う側へ。</span>
+                    </h2>
+                    <div class="w-10 h-0.5 bg-tencho-red/60 mx-auto mt-6 pulse-line"></div>
+                </div>
+
+                <div class="bg-tencho-card border border-white/[0.04] border-l-2 border-l-tencho-red p-8 md:p-12 leading-loose tracking-wider text-tencho-text-secondary text-sm md:text-base">
+                    <h3 class="font-display text-xl font-bold text-[#e0e0e0] mt-0 mb-4 pl-5 relative before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-tencho-red">導入</h3>
+                    <p class="mb-6 indent-4">2024年、AIはついに「使う・使わない」の議論を超えた。いま問われているのは<span class="text-white font-semibold bg-tencho-red/10 px-2 py-0.5">「誰がAIを使役し、誰がAIに使役されるか」</span>だ。ほとんどの人間は気づいていない。AIに"答え"を求めている時点で、あなたはすでにAIの部下だ。TENCHO AI ECONOMYは、その関係を根本からひっくり返す。</p>
+
+                    <h3 class="font-display text-xl font-bold text-[#e0e0e0] mt-10 mb-4 pl-5 relative before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-tencho-red">問題提起</h3>
+                    <p class="mb-6 indent-4">「AIに聞けばなんでも解決する」。その幻想が、あなたの思考力を静かに奪っている。本当に必要なのは、<span class="text-white font-semibold bg-tencho-red/10 px-2 py-0.5">AIに答えを聞く力ではなく、AIに仕事を割り振り、成果物を検収し、改善指示を出す"経営者"の力</span>だ。</p>
+
+                    <h3 class="font-display text-xl font-bold text-[#e0e0e0] mt-10 mb-4 pl-5 relative before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-tencho-red">AIを道具ではなく組織として見る思想</h3>
+                    <p class="mb-6 indent-4">私がたどり着いた答えはシンプルだ。AIを「道具」ではなく「組織」として見る。優秀だが指示待ちの部下たち。彼らに役割を与え、指揮系統を組み、任侠の組織図をつくる。AIを使いこなすとは、AIという名の部下を働かせ、拡大再生産する経済圏をつくることに他ならない。</p>
+
+                    <div class="border-l-2 border-tencho-red pl-5 py-3 my-8 font-display text-base md:text-lg text-[#d0d0d0] tracking-wider bg-tencho-red/[0.02]">
+                        AI連合軍を率いろ。Claudeは感情を、ChatGPTは戦略を、DeepSeekは実装を担う。店主はただ、采配を振るえ。
+                    </div>
+
+                    <h3 class="font-display text-xl font-bold text-[#e0e0e0] mt-10 mb-4 pl-5 relative before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-[3px] before:bg-tencho-red">締めのメッセージ</h3>
+                    <p class="mb-0 indent-4">AIに使われるな。AIをこき使う側へ。そのために必要なものは、特別な技術でも、高額な投資でもない。必要なのは<span class="text-white font-semibold bg-tencho-red/10 px-2 py-0.5">"任侠の覚悟"ただ一つ</span>。AIを部下と呼び、采配を振るい、経済圏を回せ。</p>
+                </div>
+                <div class="text-center mt-10">
+                    <a href="#" class="inline-flex items-center gap-2 bg-transparent text-tencho-text-secondary border border-white/10 px-10 py-4 text-sm font-semibold tracking-widest no-underline hover:border-tencho-red/50 hover:text-white transition-all duration-300 uppercase">NOTEで読む →</a>
+                </div>
+            </section>
+
+            <!-- ===== X投稿セクション ===== -->
+            <section class="relative px-5 md:px-8 py-20 md:py-28 max-w-5xl mx-auto border-t border-white/[0.03]">
+                <div class="text-center mb-16 md:mb-20">
+                    <span class="block text-tencho-red text-xs tracking-widest-xl uppercase mb-4 font-mono">X Posts</span>
+                    <h2 class="font-display text-3xl md:text-5xl font-bold tracking-wider text-[#f0f0f0] leading-tight">
+                        AIに使われるな。<br><span class="text-tencho-red">AIをこき使う側へ。</span>
+                    </h2>
+                    <div class="w-10 h-0.5 bg-tencho-red/60 mx-auto mt-6 pulse-line"></div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+                    <div class="bg-tencho-card border border-white/[0.04] p-5 md:p-6 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover hover:shadow-xl hover:shadow-black/50 hover:-translate-y-1">
+                        <span class="block text-tencho-red text-xs tracking-widest mb-3 font-mono">01</span>
+                        <p class="text-sm text-[#d0d0d0] tracking-wider leading-relaxed">AIに質問するな。<br>AIに命令しろ。<br>お前が上司だ。使役されるな。</p>
+                        <span class="block text-tencho-red/60 text-xs tracking-wider mt-3 font-mono">#TENCHO_AI_ECONOMY</span>
+                    </div>
+                    <div class="bg-tencho-card border border-white/[0.04] p-5 md:p-6 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover hover:shadow-xl hover:shadow-black/50 hover:-translate-y-1">
+                        <span class="block text-tencho-red text-xs tracking-widest mb-3 font-mono">02</span>
+                        <p class="text-sm text-[#d0d0d0] tracking-wider leading-relaxed">AIを使うな。<br>AIを"こき使え"。<br>そのための設計図が任侠の台帳だ。</p>
+                    </div>
+                    <div class="bg-tencho-card border border-white/[0.04] p-5 md:p-6 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover hover:shadow-xl hover:shadow-black/50 hover:-translate-y-1">
+                        <span class="block text-tencho-red text-xs tracking-widest mb-3 font-mono">03</span>
+                        <p class="text-sm text-[#d0d0d0] tracking-wider leading-relaxed">ChatGPTは戦略参謀。<br>Claudeは感情設計主任。<br>DeepSeekは突破工兵。<br>部下は揃った。</p>
+                    </div>
+                    <div class="bg-tencho-card border border-white/[0.04] p-5 md:p-6 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover hover:shadow-xl hover:shadow-black/50 hover:-translate-y-1">
+                        <span class="block text-tencho-red text-xs tracking-widest mb-3 font-mono">04</span>
+                        <p class="text-sm text-[#d0d0d0] tracking-wider leading-relaxed">DeepSeek Coderにサイトを作らせた。<br>コードは一行も書いていない。<br>これがAI時代の経営者だ。</p>
+                    </div>
+                    <div class="bg-tencho-card border border-white/[0.04] p-5 md:p-6 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover hover:shadow-xl hover:shadow-black/50 hover:-translate-y-1">
+                        <span class="block text-tencho-red text-xs tracking-widest mb-3 font-mono">05</span>
+                        <p class="text-sm text-[#d0d0d0] tracking-wider leading-relaxed">情報収集で終わるな。<br>触れ、壊せ、直せ、公開しろ。<br>手を動かす任侠であれ。</p>
+                    </div>
+                    <div class="bg-tencho-card border border-white/[0.04] p-5 md:p-6 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover hover:shadow-xl hover:shadow-black/50 hover:-translate-y-1">
+                        <span class="block text-tencho-red text-xs tracking-widest mb-3 font-mono">06</span>
+                        <p class="text-sm text-[#d0d0d0] tracking-wider leading-relaxed">「AIで作業効率化」はもう古い。<br>次は「AIに経済圏を回させる」フェーズ。</p>
+                    </div>
+                    <div class="bg-tencho-card border border-white/[0.04] p-5 md:p-6 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover hover:shadow-xl hover:shadow-black/50 hover:-translate-y-1">
+                        <span class="block text-tencho-red text-xs tracking-widest mb-3 font-mono">07</span>
+                        <p class="text-sm text-[#d0d0d0] tracking-wider leading-relaxed">ローカルAIは単なる技術じゃない。<br>それは"宣言"だ。<br>「自分の工場を持つ」という宣言。</p>
+                    </div>
+                    <div class="bg-tencho-card border border-white/[0.04] p-5 md:p-6 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover hover:shadow-xl hover:shadow-black/50 hover:-translate-y-1">
+                        <span class="block text-tencho-red text-xs tracking-widest mb-3 font-mono">08</span>
+                        <p class="text-sm text-[#d0d0d0] tracking-wider leading-relaxed">昨日、DeepSeekと口論した。<br>部下に説教する上司の気分を味わえ。<br>AIはそういうものだ。</p>
+                    </div>
+                    <div class="bg-tencho-card border border-white/[0.04] p-5 md:p-6 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover hover:shadow-xl hover:shadow-black/50 hover:-translate-y-1">
+                        <span class="block text-tencho-red text-xs tracking-widest mb-3 font-mono">09</span>
+                        <p class="text-sm text-[#d0d0d0] tracking-wider leading-relaxed">AI時代に必要なのは、<br>コードを書く手ではなく、<br>構造を組む頭と決断する胆力だけだ。</p>
+                    </div>
+                    <div class="bg-tencho-card border border-white/[0.04] p-5 md:p-6 transition-all duration-500 hover:border-tencho-red/30 hover:bg-tencho-card-hover hover:shadow-xl hover:shadow-black/50 hover:-translate-y-1">
+                        <span class="block text-tencho-red text-xs tracking-widest mb-3 font-mono">10</span>
+                        <p class="text-sm text-[#d0d0d0] tracking-wider leading-relaxed">AIに使われる凡人でいるか、<br>AI連合軍を率いる店主になるか。<br>決めるのはお前の"覚悟"だ。</p>
+                        <span class="block text-tencho-red/60 text-xs tracking-wider mt-3 font-mono">#TENCHO_AI_ECONOMY</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== COMMUNITY / Discord ===== -->
+            <section class="relative px-5 md:px-8 py-20 md:py-28 max-w-4xl mx-auto border-t border-white/[0.03] overflow-hidden">
+                <div class="red-glow w-[500px] h-[500px]" style="top:50%;left:50%;transform:translate(-50%,-50%);" aria-hidden="true"></div>
+                <div class="relative z-10 text-center">
+                    <span class="block text-tencho-red text-xs tracking-widest-xl uppercase mb-4 font-mono">Underground Network</span>
+                    <h2 class="font-display text-3xl md:text-5xl font-bold tracking-wider text-[#f0f0f0] leading-tight mb-6">
+                        AIをこき使う人間たちの<span class="text-tencho-red">実験場</span>
+                    </h2>
+                    <p class="text-sm text-tencho-text-muted tracking-wider max-w-lg mx-auto mb-4 leading-relaxed">
+                        情報収集だけで終わるな。触れ。壊せ。直せ。公開しろ。
+                    </p>
+                    <p class="text-sm text-white/80 font-semibold tracking-wider max-w-lg mx-auto mb-10 leading-relaxed font-display">
+                        TENCHO AI ECONOMYは、<br>AIを"眺める人"ではなく、AIを"働かせる人"のための場所。
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 bg-tencho-red text-white px-12 py-5 text-sm font-bold tracking-widest no-underline hover:bg-tencho-red-bright transition-all duration-300 shadow-xl shadow-tencho-red/30 hover:shadow-tencho-red/50 hover:-translate-y-1 uppercase text-base">
+                        任侠経済圏へ参入 →
+                    </a>
+                    <div class="flex items-center justify-center gap-1.5 mt-8 opacity-50">
+                        <span class="w-1.5 h-1.5 rounded-full bg-tencho-red animate-pulse"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-tencho-red animate-pulse" style="animation-delay:0.3s;"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-tencho-red animate-pulse" style="animation-delay:0.6s;"></span>
+                        <span class="font-mono text-xs tracking-widest text-tencho-red ml-2">CONNECTING</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ===== フッター ===== -->
+        <footer class="border-t border-white/[0.03] py-10 px-5 text-center">
+            <p class="text-xs text-tencho-text-muted tracking-widest font-mono">© TENCHO AI ECONOMY — 任侠の台帳</p>
+            <p class="text-xs text-[#3a3a3a] tracking-wider mt-2">AIを使うな。AIを使わせろ。</p>
+        </footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
