@@ -21,7 +21,7 @@ import './style.css'
             const mins = elapsedMinutes % 60;
             timeStr = hours + 'h ' + mins + 'm ago';
         }
-        deployCounter.textContent = timeStr;
+        deployCounter!.textContent = timeStr;
     }
     
     // Initial update to avoid wait
